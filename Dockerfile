@@ -1,4 +1,4 @@
-FROM alpine:3.3
+FROM alpine:3.4
 MAINTAINER theorician
 
 # We need the testing repo because of the shadow package.
