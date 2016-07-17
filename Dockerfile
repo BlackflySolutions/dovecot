@@ -5,6 +5,8 @@ MAINTAINER theorician
 RUN echo http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories
 RUN apk update && apk add --no-cache dovecot shadow
 
+ADD dovecot-imap-ssl.conf /etc/dovecot/dovecot.conf
+
 EXPOSE 993
 
 VOLUME ["/config", "/mail"]

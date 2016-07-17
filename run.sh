@@ -20,14 +20,11 @@ chown -R dovecot:dovecot /config
 chown dovecot:dovecot /mail
 chmod +x /mail
 
-if [ ! -f "/config/dovecot.conf" ]; then
-  die "/config/dovecot.conf does not exist - did you share /config properly?"
-fi
 if [ ! -f "/config/dovecot.passwd" ]; then
   die "/config/dovecot.passwd does not exist - please create it. an example: 
   (username):(password with scheme):(uid):(gid)::(virtual home folder)
   user:{plain}password:1050:1050::/mail/user"
 fi
 
-/usr/sbin/dovecot -c /config/dovecot.conf
+/usr/sbin/dovecot
 tail -f /var/log/messages
