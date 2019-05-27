@@ -16,7 +16,7 @@ id dovecot 2>/dev/null
 if [ ! "$(id -u dovecot)" -eq "$PUID" ]; then usermod -o -u "$PUID" dovecot ; fi
 if [ ! "$(id -g dovecot)" -eq "$PGID" ]; then groupmod -o -g "$PGID" dovecot ; fi
 mkdir /config
-echo "${CIVIMAIL_USER}:{plain}${CIVIMAIL_PASS}:${PUID}:${GUID}::/civimail" > /config/dovecot.passwd
+echo "${VSITE_CIVIMAIL_USER}:{plain}${VSITE_CIVIMAIL_PASS}:${PUID}:${GUID}::/civimail" > /config/dovecot.passwd
 chown -R dovecot:dovecot /config
 
 if [ ! -f "/config/dovecot.passwd" ]; then
