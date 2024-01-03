@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM alpine:3.19
 # We need the testing repo because of the shadow package.
 #RUN echo http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories
 RUN apk update && apk add --no-cache dovecot shadow
